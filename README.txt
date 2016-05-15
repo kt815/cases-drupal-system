@@ -10,6 +10,7 @@ Installation
       'database' => 'kt815_d7',
       'username' => 'root',
       'password' => '1',
+
  * Login: localhost/user/
 	username: admin
 	password: 1
