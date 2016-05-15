@@ -1,0 +1,126 @@
+<?php
+
+module_load_include('inc', 'kt', 'blocks/projects.images');
+module_load_include('inc', 'kt', 'blocks/projects.table');
+
+function kt_block_info()
+ {
+
+  $blocks = array();
+
+  $blocks['kt_header'] = array(
+    'info' => t('ktHeader'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  $blocks['kt_menu'] = array(
+    'info' => t('ktMenu'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  $blocks['kt_about'] = array(
+    'info' => t('ktAbout'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  $blocks['kt_skills'] = array(
+    'info' => t('ktSkills'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  $blocks['kt_projects_images'] = array(
+    'info' => t('ktProjectsImages'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  $blocks['kt_projects_table'] = array(
+    'info' => t('ktProjectsTable'),
+    'cache' => DRUPAL_NO_CACHE
+  );
+
+  return $blocks;
+}
+
+function kt_block_view($delta = '') 
+{
+  $block = array();  
+
+  switch($delta) {
+    case 'kt_header' :
+      $block['content'] = kt_header_block_view();
+      break;
+    case 'kt_menu' :
+      $block['content'] = kt_menu_block_view();  
+      break;
+    case 'kt_about' :
+      $block['content'] = kt_about_block_view();  
+      break;
+    case 'kt_skills' :
+      $block['content'] = kt_skills_block_view();  
+      break;
+    case 'kt_projects_images' :
+      $block['content'] = kt_projects_images_block_view();  
+      break;
+    case 'kt_projects_table' :
+      $block['content'] = kt_projects_table_block_view();  
+      break;
+  }
+
+    return $block;
+}
+
+function kt_header_block_view() 
+{
+
+ $var = '<div class="page__wrapper_center page__wrapper_margin"><header class="header"><h1 class="header__h1"><a href="/" class="header__h1_logo">my.cases</a></h1><aside class="header__content_reposotory">Web Development Solutions</aside><aside class="header__content_icons"><a href="https://github.com/kt815?tab=repositories" class="header__btn"><i class="fa fa-github"></i></a><a href="skype:kt.815?call" class="header__btn"><span>Call the Skype Echo / Sound Test Service</span><i class="fa fa-skype"></i></a><a href="mailto:s.buharow@gmail.com" class="header__btn last"><span>Email: s.buharow@gmail.com</span><i class="fa fa-envelope"></i></a></aside></header></div>';
+
+ $output = t($var);
+ return $output;   
+
+}
+
+function kt_menu_block_view() 
+{
+
+ $var = '<div class="page__wrapper_center"><nav class="content__tabs"><span class="content__tabs_span"><a href="/" class="content__tabs_a">About</a></span><span class="content__tabs_span"><a href="/projects" class="content__tabs_a">Projects</a></span></nav></div>';
+
+ $output = t($var);
+ return $output; 
+
+}
+
+function kt_about_block_view() 
+{
+
+ $var = "<p class='content__article_p'>Hello! My name is Sergey Buharow. I have experience building dynamic and responsive websites using HTML, PHP, MySQL, CSS, jQuery, and AJAX. My areas of expertise are in building web apps using PHP, MySQL, Slim 2.x, Laravel 5.x, Drupal 7.x and Bootstrap 3.<br><br>I like writing clean and easy to maintain code. I really like help on others projects when necessary. I appreciate communication with the client and I'm doing to be as responsive as possible and report systematically on project progress. Require a developer for one of your projects? I'd ready to discuss it!</p><br>";
+
+
+
+ $output = t($var);
+ return $output;   
+
+}
+
+function kt_skills_block_view() 
+{
+
+ $var = '<div class="skills"><div class="skills__group"><span class="skills__group_title">Skills:</span><span class="skills__group_tag"><strong>PHP</strong></span><span class="skills__group_tag">OOP-development</span><span class="skills__group_tag">HTML5, CSS 3</span><span class="skills__group_tag">Javascript</span></div><div class="skills__group"><div class="skills__group_title">Prefer:</div><span class="skills__group_tag"><a href="https://en.wikipedia.org/wiki/Don%27t_repeat_yourself" target="_blank" class="skills__group_a">DRY development</a><i class="fa fa-external-link"></i></span><span class="skills__group_tag"><a href="https://en.wikipedia.org/wiki/KISS_principle" target="_blank" class="skills__group_a">KISS principle</a><i class="fa fa-external-link"></i></span><span class="skills__group_tag"><a href="http://www.php-fig.org/psr/" target="_blank" class="skills__group_a">PSR</a><i class="fa fa-external-link"></i></span></div><div class="skills__group"><span class="skills__group_title">Frameworks:</span><span class="skills__group_tag"><strong>Laravel 5</strong></span><span class="skills__group_tag">Slim Framework</span><span class="skills__group_tag">Drupal</span></div><div class="skills__group"><span class="skills__group_title">Front-end:</span><span class="skills__group_tag">Less</span><span class="skills__group_tag">Sass</span><span class="skills__group_tag">Bootstrap</span><span class="skills__group_tag">jQuery</span></div><div class="skills__group"><span class="skills__group_title">Databases:</span><span class="skills__group_tag">MySQL 5.5+</span><span class="skills__group_tag">SQLite</span><span class="skills__group_tag">MongoDB</span></div><div class="skills__group"><span class="skills__group_title">Instruments:</span><span class="skills__group_tag">Photoshop</span><span class="skills__group_tag">Git</span><span class="skills__group_tag">Grunt/Gulp</span><span class="skills__group_tag">Ubuntu</span></div><div class="skills__group"><span class="skills__group_title">Services:</span><span class="skills__group_tag">GitHub</span><span class="skills__group_tag">BitBucket</span><span class="skills__group_tag">Jira</span></div></div>';
+
+ $output = t($var);
+ return $output;   
+
+
+}
+
+function kt_menu() {
+  $items['projects'] = array(
+     'page callback' => 'kt_projects_data_page',
+     'access callback' => TRUE,
+     'file' => 'pages/projects.images.inc',
+  );
+
+  return $items;
+}
+
+
+?>

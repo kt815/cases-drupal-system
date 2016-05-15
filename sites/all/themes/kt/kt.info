@@ -1,0 +1,8 @@
+name = Kt
+description = A custom "kt" theme for Inspiration
+core = 7.x
+
+; Regions
+regions[header] = Header
+regions[content] = Content
+regions[footer] = Footer
