@@ -11,6 +11,6 @@ Installation
       'username' => 'root',
       'password' => '1',
 
- * Login: localhost/user/
+ * Login: http://localhost/user/
 	username: admin
 	password: 1
