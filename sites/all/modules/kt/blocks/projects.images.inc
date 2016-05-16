@@ -27,7 +27,7 @@ $result = $query->execute();
   $out .= '<a href="/' . $row->alias . '" class="project__a col-xs-12 col-sm-4">
       <div class="row">
         <div class="project__img-gutter">
-          <div class="zoom"><i class="fa fa-folder-open"></i></div><img src="http://kt815.d7/sites/default/files/field/image/' . $row->filename . '" alt="Piatto Psd" class="project__img">
+          <div class="zoom"><i class="fa fa-folder-open"></i></div><img src="/sites/default/files/field/image/' . $row->filename . '" alt="Piatto Psd" class="project__img">
         </div>
         <div class="project__title">' . $row->title . '</div>
       </div>
